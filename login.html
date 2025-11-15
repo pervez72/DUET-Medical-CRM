@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DUET Medical Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-green': '#047857',
+                        'brand-green-light': '#059669',
+                        'dark-bg': '#1F2937', 
+                        'light-bg': '#F9FAFB',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-light-bg antialiased">
+
+    <div class="flex items-center justify-center min-h-screen px-6 py-12">
+        <div class="w-full max-w-md">
+            <div class="flex flex-col items-center mb-6">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-green h-8 w-8"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    <span class="text-2xl font-bold text-gray-800">DUET Medical Center</span>
+                </a>
+                <h2 class="mt-4 text-3xl font-bold text-center text-gray-900">
+                    Welcome Back
+                </h2>
+                <p class="mt-2 text-gray-600">Login to your Health Hub</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-xl space-y-6">
+                <form action="#" method="POST">
+                    <div>
+                        <label for="id" class="block text-sm font-medium text-gray-700">University ID or Email</label>
+                        <div class="mt-1">
+                            <input id="id" name="id" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <div class="text-sm">
+                                <a href="#" class="font-medium text-brand-green hover:text-brand-green-light">
+                                    Forgot your password?
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-1">
+                            <input id="password" name="password" type="password" required class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-lg text-lg font-bold text-white bg-brand-green hover:bg-brand-green-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-green transition-colors">
+                            Login to Your Hub
+                        </button>
+                    </div>
+                </form>
+
+                <p class="text-center text-gray-600">
+                    Don't have an account?
+                    <a href="signup.html" class="font-bold text-brand-green hover:text-brand-green-light">
+                        Register Here
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

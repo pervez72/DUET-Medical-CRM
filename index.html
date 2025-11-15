@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUET Medical Center - Your Health & Well-being</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-green': '#047857', // Main color
+                        'brand-green-light': '#059669', // Hover color
+                        'dark-bg': '#1F2937', 
+                        'light-bg': '#F9FAFB',
+                    },
+                    animation: {
+                        float: 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' } 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .info-card {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+        }
+    </style>
+</head>
+<body class="font-sans bg-white antialiased">
+
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex items-center justify-between">
+                <a href="#" class="flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-green h-7 w-7"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    <span class="text-2xl font-bold text-gray-800">DUET Medical Center</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-600 hover:text-brand-green font-medium">Our Services</a>
+                    <a href="#guide" class="text-gray-600 hover:text-brand-green font-medium">Your Journey</a>
+                    <a href="#mission" class="text-gray-600 hover:text-brand-green font-medium">Our Mission</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-600 hover:text-brand-green font-medium px-4 py-2">
+                        Health Hub Login
+                    </a>
+                    <a href="signup.html" class="px-5 py-2.5 bg-brand-green text-white font-medium rounded-lg shadow-md hover:bg-brand-green-light transition-colors">
+                        Register
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="relative bg-white">
+        <div class="container mx-auto px-6 pt-28 pb-36 md:pt-36 md:pb-48 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                    Your Health. Your Well-being. All in One Place.
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-xl mx-auto md:mx-0">
+                    Experience a new level of care. Our secure system connects you to the DUET Medical Center, giving you peace of mind and easy access to the health services you need.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="login.html" class="px-8 py-3 bg-brand-green text-white font-bold rounded-lg shadow-lg hover:bg-brand-green-light transition-colors text-lg">
+                        Open Your Health Hub
+                    </a>
+                    <a href="#services" class="px-8 py-3 bg-white text-gray-800 font-medium rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors text-lg">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+            <div class="animate-float">
+                <img src="/src/image/Medical_Center_(Ground_Floor),_DUET.jpg" alt="DUET Medical Center Building" class="rounded-xl shadow-2xl">
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 right-0 w-full h-24 text-light-bg">
+            <svg class="w-full h-full" viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path fill="currentColor" d="M0,100 C150,50 300,0 450,0 C600,0 750,50 900,50 C1050,50 1200,0 1350,0 C1400,0 1440,50 1440,100 L0,100 Z"></path>
+            </svg>
+        </div>
+    </main>
+
+    <section id="mission" class="py-28 bg-light-bg">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-up">
+                    <span class="text-brand-green font-semibold uppercase">Our Mission</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Caring for Our Community</h2>
+                    <p class="text-gray-600 text-lg">
+                        To provide the DUET community with seamless, compassionate, and high-quality care, empowering you to thrive through our new digital health platform.
+                    </p>
+                </div>
+                <div class="fade-in-up" style="transition-delay: 200ms;">
+                    <span class="text-brand-green font-semibold uppercase">Our Vision</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">A Campus That Cares</h2>
+                    <p class="text-gray-600 text-lg">
+                        To foster a supportive, healthy, and connected campus, ensuring that well-being is at the heart of the DUET experience for every student and staff member.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="guide" class="py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Your Journey to Wellness</h2>
+                <p class="mt-4 text-lg text-gray-600">A simple, caring process for all students, staff, and medical teams.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                <div class="fade-in-up bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <div class="inline-block p-5 bg-green-100 text-brand-green rounded-full mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">1. Securely Connect</h3>
+                    <p class="text-gray-600">Register with your official DUET ID to create your personal, confidential health profile.</p>
+                </div>
+                <div class="fade-in-up bg-white p-8 rounded-xl shadow-lg border border-gray-100" style="transition-delay: 200ms;">
+                    <div class="inline-block p-5 bg-green-100 text-brand-green rounded-full mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">2. Find Care, Instantly</h3>
+                    <p class="text-gray-600">Easily find a doctor, see their availability, and book your appointment in seconds.</p>
+                </div>
+                <div class="fade-in-up bg-white p-8 rounded-xl shadow-lg border border-gray-100" style="transition-delay: 400ms;">
+                    <div class="inline-block p-5 bg-green-100 text-brand-green rounded-full mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 15v6H6V10c0-2.21 1.79-4 4-4h4c2.21 0 4 1.79 4 4v1"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">3. Stay Informed & Healthy</h3>
+                    <p class="text-gray-600">Access your test results, medical history, and health resources anytime, anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-28 bg-light-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Designed for Your Peace of Mind</h2>
+                <p class="mt-4 text-lg text-gray-600">All the tools you need for your health on campus, simplified.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="info-card fade-in-up bg-white p-8 rounded-xl shadow-lg" style="transition-delay: 100ms;">
+                    <div class="inline-block p-4 bg-green-100 text-brand-green rounded-lg mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Your Personal Health Hub</h3>
+                    <p class="text-gray-600">A dedicated, secure dashboard for the entire DUET community to manage health with ease.</p>
+                </div>
+                
+                <div class="info-card fade-in-up bg-white p-8 rounded-xl shadow-lg" style="transition-delay: 200ms;">
+                    <div class="inline-block p-4 bg-green-100 text-brand-green rounded-lg mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Your Health History, Secured</h3>
+                    <p class="text-gray-600">Access your test results, prescription history, and visit summaries online anytime.</p>
+                </div>
+                
+                <div class="info-card fade-in-up bg-white p-8 rounded-xl shadow-lg" style="transition-delay: 300ms;">
+                    <div class="inline-block p-4 bg-green-100 text-brand-green rounded-lg mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Book Care, Stress-Free</h3>
+                    <p class="text-gray-600">See doctor availability and schedule your appointments without any hassle or phone calls.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="case-study" class="py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-brand-green font-semibold uppercase">AI-Powered Insights</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">A Case Study in Campus Wellness</h2>
+                <p class="mt-4 text-lg text-gray-600">See how our AI works to protect the DUET community.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <div class="bg-light-bg p-8 rounded-xl shadow-lg space-y-6">
+                    <h4 class="text-xl font-bold text-gray-900">AI Model: Campus Trend Analysis</h4>
+                    
+                    <div class="fade-in-up is-visible">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 text-brand-green rounded-full p-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            </div>
+                            <p class="ml-4 text-gray-700 font-medium">AI analyzes anonymous symptom data from appointments.</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in-up" style="transition-delay: 300ms;">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 text-brand-green rounded-full p-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                            </div>
+                            <p class="ml-4 text-gray-700 font-medium"><span class="font-bold text-red-600">Anomaly Detected:</span> 40% spike in "flu-like" symptoms.</p>
+                        </div>
+                        <div class="w-full h-32 flex items-end justify-between space-x-2 px-2 mt-4">
+                            <div class="w-1/5 bg-gray-300 rounded-t-lg" style="height: 20%"></div>
+                            <div class="w-1/5 bg-gray-300 rounded-t-lg" style="height: 25%"></div>
+                            <div class="w-1/5 bg-gray-300 rounded-t-lg" style="height: 22%"></div>
+                            <div class="w-1/5 bg-red-500 rounded-t-lg" style="height: 70%"></div>
+                            <div class="w-1/5 bg-red-400 rounded-t-lg" style="height: 65%"></div>
+                        </div>
+                        <div class="w-full flex justify-between space-x-2 px-2 text-xs text-gray-500">
+                            <span class="w-1/5 text-center">Mon</span>
+                            <span class="w-1/5 text-center">Tue</span>
+                            <span class="w-1/5 text-center">Wed</span>
+                            <span class="w-1/5 text-center text-red-600 font-bold">Thu</span>
+                            <span class="w-1/5 text-center">Fri</span>
+                        </div>
+                    </div>
+
+                    <div class="fade-in-up" style="transition-delay: 600ms;">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 text-brand-green rounded-full p-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <p class="ml-4 text-gray-700 font-medium">Admin is notified <span class="text-brand-green font-bold">5 days earlier</span> than manual reports.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in-up" style="transition-delay: 200ms;">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Proactive Care in Action</h3>
+                    <div class="space-y-6 text-gray-600 text-lg">
+                        <p><strong>The Challenge:</strong> A fast-spreading flu began moving through campus. Normally, the Medical Center would only realize the scale of the outbreak after wait times became unmanageable.</p>
+                        <p><strong>The AI Solution:</strong> Our new system's AI detected the sharp rise in flu-like symptoms from appointment data, long before it became a crisis. It flagged the anomaly to the medical administration automatically.</p>
+                        <p><strong>The Outcome:</strong> The DUET Medical Center was able to get ahead of the outbreak. They sent a campus-wide health alert, ordered extra flu test kits, and allocated staff to high-need areas, reducing the overall impact and keeping the community healthier.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="supply-chain" class="py-28 bg-light-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-brand-green font-semibold uppercase">AI-POWERED OPERATIONS</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Intelligent Supply Chain</h2>
+                <p class="mt-4 text-lg text-gray-600">Ensuring the right medicine is always available, safely and efficiently.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="info-card fade-in-up bg-white p-8 rounded-xl shadow-lg" style="transition-delay: 100ms;">
+                    <div class="inline-block p-4 bg-green-100 text-brand-green rounded-lg mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Predictive Stocking</h3>
+                    <p class="text-gray-600">Our AI forecasts student health trends to predict demand, ensuring vital medicines are always in stock before an outbreak.</p>
+                </div>
+                
+                <div class="info-card fade-in-up bg-white p-8 rounded-xl shadow-lg" style="transition-delay: 200ms;">
+                    <div class="inline-block p-4 bg-green-100 text-brand-green rounded-lg mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Real-Time Tracking</h3>
+                    <p class="text-gray-600">Monitor inventory levels, track shipments, and manage stock from a single, intelligent dashboard. No more manual counts.</p>
+                </div>
+                
+                <div class="info-card fade-in-up bg-white p-8 rounded-xl shadow-lg" style="transition-delay: 300ms;">
+                    <div class="inline-block p-4 bg-green-100 text-brand-green rounded-lg mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Automated Safety Checks</h3>
+                    <p class="text-gray-600">The system automatically flags medications nearing their expiry date, ensuring every patient receives safe and effective treatment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-28 bg-brand-green">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Feeling healthy starts here.</h2>
+            <p class="mt-4 text-lg text-gray-200">Take the first step towards easier, more connected healthcare. <br class="hidden md:block"> Register or log in to your personal health hub.</p>
+            <a href="login.html" class="mt-8 inline-block px-10 py-4 bg-white text-brand-green font-bold text-lg rounded-lg shadow-lg hover:bg-gray-100 transition-colors">
+                Enter Your Health Hub
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-dark-bg text-gray-400 py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-base text-white">&copy; 2025 Dhaka University of Engineering & Technology, Gazipur.</p>
+                    <p class="text-sm">All rights reserved.</p>
+                </div>
+                <div class="text-sm">
+                    <p class="text-base text-white">A Joint Initiative</p>
+                    <p>Managed by the <span classclass="text-white font-semibold">DUET Medical Center</span></p>
+                    <p>Full Technical Support by <span class="text-white font-semibold">AsuX Tech Ltd</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { 
+                threshold: 0.1 
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.fade-in-up');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+</html>
